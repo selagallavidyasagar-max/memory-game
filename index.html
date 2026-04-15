@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎮 Memory Game</h1>
+
+    <div class="controls">
+        <select id="difficulty" onchange="changeDifficulty()">
+            <option value="easy">Easy (4x4)</option>
+            <option value="medium">Medium (4x5)</option>
+            <option value="hard">Hard (6x6)</option>
+        </select>
+
+        <button onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+
+    <div class="stats">
+        <span>⏳ Time: <span id="time">0</span>s</span>
+        <span>⭐ Moves: <span id="moves">0</span></span>
+    </div>
+
+    <div class="game-board" id="gameBoard"></div>
+
+    <button onclick="restartGame()">🔄 Restart</button>
+</div>
+
+<!-- Win Popup -->
+<div id="winPopup" class="popup">
+    <div class="popup-content">
+        <h2>🏆 You Won!</h2>
+        <p id="finalStats"></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+
+<!-- Sounds -->
+<audio id="flipSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+<audio id="matchSound" src="https://www.soundjay.com/button/sounds/button-4.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
